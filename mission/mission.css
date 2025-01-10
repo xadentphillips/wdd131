@@ -1,0 +1,34 @@
+body{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+}
+p{
+    width: 400px;
+}
+h4{
+    color: steelblue;
+    border-style: solid;
+    border-color: white;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
+}
+#listhead{
+    text-align: left;
+    font-style: italic;
+}
+#paragraph{
+    padding-bottom: 30px;
+    text-align: left;
+}
+ol{
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+li{
+    text-align: left;
+}
+img{
+    width: 100px;
+}
