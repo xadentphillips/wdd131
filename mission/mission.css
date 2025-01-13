@@ -1,7 +1,7 @@
 body{
     text-align: center;
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 35%;
 }
 p{
     width: 400px;
@@ -28,6 +28,7 @@ ol{
 }
 li{
     text-align: left;
+    line-height: 1.5em;
 }
 img{
     width: 100px;
