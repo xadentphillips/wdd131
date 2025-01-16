@@ -2,6 +2,8 @@ body{
     text-align: center;
     margin: 0 auto;
     max-width: 35%;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif
 }
 p{
     width: 400px;
@@ -32,4 +34,24 @@ li{
 }
 img{
     width: 100px;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+.dark h4{
+    color: steelblue
+}
+.light{
+    background-color: white;
+    color: black;
+}
+.light h4{
+    color: steelblue;
+}
+.dark h4{
+    border-style: solid;
+    border-color: black;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
 }
