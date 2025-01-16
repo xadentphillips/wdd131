@@ -4,7 +4,7 @@ function light(){
     lightpic.setAttribute('src', 'byuilogo.webp');
     lightpic.setAttribute('alt', 'BYUI Logo');
     const lclass = document.querySelector('body');
-    lclass.setAttribute('class', 'light');
+    lclass.classList.remove('dark');
 }
 function dark(){
     const darkpic = document.querySelector('img');

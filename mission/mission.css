@@ -40,16 +40,6 @@ img{
     color: white;
 }
 .dark h4{
-    color: steelblue
-}
-.light{
-    background-color: white;
-    color: black;
-}
-.light h4{
-    color: steelblue;
-}
-.dark h4{
     border-style: solid;
     border-color: black;
     border-bottom-width: 1px;
