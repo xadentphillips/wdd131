@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: Mooli, san-serif;
+    }
+header, footer{
+    background-color: #52489c;
+    color: white;
+}
+footer{
+    text-align: left;
+    padding-left: 150px;
+}
+header{
+    padding-bottom: 10px;
+}
+a{
+    color: white;
+}
+main{
+    background-color: lightslategray;
+    color: white;
+}
+body{
+    background-color: #52489c;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+}
+img{
+    background-color: white;
+    padding: 5px;
+    max-width: 100%;
+    height: 250px;
+    width: 250px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+nav{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+#nav1{
+    grid-row: 1/2;
+}
+#nav2{
+    grid-row: 2/3;
+}
+#nav3{
+    grid-row: 3/4;
+}
+#nav4{
+    grid-row: 4/5;
+}
+#nav5{
+    grid-row: 5/6;
+}
+button{
+    background-color:#52489c;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+}
+@media screen and (min-width:700px){
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    figure{
+        padding: 20px;
+        flex: 1 1 200px;
+        text-align: center;
+    }
+    footer{
+        padding-left: 200px;
+    }
+
+}
+@media screen and (min-width:1000px){
+    #menu{
+        display: none;
+    }
+    nav{
+        grid-template-rows: 1fr;
+    }
+    #nav1{
+        grid-row: 1/2;
+    }
+    #nav2{
+        grid-row: 1/2;
+    }
+    #nav3{
+        grid-row: 1/2;
+    }
+    #nav4{
+        grid-row: 1/2;
+    }
+    #nav5{
+        grid-row: 1/2;
+    }
+}
