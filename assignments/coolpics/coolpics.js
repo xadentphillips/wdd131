@@ -40,7 +40,23 @@ function closeviewer(){
 document.addEventListener('click', viewHandler);
 
 function viewerTemplate(pic, alt) {
-    return `<div class="viewer"><button class="close-viewer">X</button>
+    return `<div class="viewer" aria-modal="true" role="dialogue"><button class="close-viewer">X</button>
         <img id="bigimage" src="${pic}" alt="${alt}">
         </img></div>`;
 }
+
+window.addEventListener("click", function (event) {
+    let modal = document.querySelector('.viewer');
+    // close the modal when user clicks outside of the image
+    if (event.target === modal) {
+    modal.remove();
+    }
+    });
+    
+    // allow the escape key to close the modal as well
+    window.addEventListener("keydown", function (event) {
+    let modal = document.querySelector('.viewer');
+    if (event.key === "Escape") {
+    modal.remove();
+    }
+    });
