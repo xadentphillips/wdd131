@@ -38,11 +38,11 @@ const articles = [
 		stars: "⭐⭐⭐⭐⭐"
 	}
 ]
-console.log('Test 1')
+
 const container = document.querySelector('.maingrid');
-console.log('test2')
+
 articles.forEach(function (item) {
-	console.log('github are you working?')
+	
 	let book = document.createElement('article');
 
 	book.setAttribute('class', 'books');
@@ -63,5 +63,5 @@ articles.forEach(function (item) {
 	book.innerHTML = html;
 
 	container.appendChild(book);
-	console.log('Hopefully there are three of these')
+	
 })
