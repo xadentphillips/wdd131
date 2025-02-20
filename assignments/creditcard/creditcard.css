@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+#cc{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: .65fr 3fr .65fr 40px;
+    width: 420px;
+    height: 310px;
+    font-family: Rokkitt, serif;
+    font-weight: .3em;
+}
+#topCredit{
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    background-color: lightgray;
+    z-index: 2;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+#bottomCredit{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 15px 40px 2fr 1.5fr;
+    grid-column: 2/4;
+    grid-row: 2/4;
+    background-color: lightgray;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+button{
+    grid-row: 4/5;
+    grid-column: 3/4;
+    justify-self: right;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 11px;
+    height: 28px;
+    width: 60px;
+    border-top-color: gray;
+    border-left-color: gray;
+    font-family: sans-serif;
+}
+#total{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-left: 20px;
+    font-size: 1.125em;
+}
+#card-image{
+    grid-column: 2/3;
+    justify-self: right;
+    grid-row: 1/2;
+    margin-right: 20px;
+}
+#cardnumbercss{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 20px;
+}
+#holdercss{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    justify-self: right;
+    margin-left: 20px;
+}
+#expirationcss{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    justify-self: left;
+    margin-right: 20px;
+}
+#exMonth{
+    width:30px;
+}
+#exYear{
+    width:30px;
+}
+#blackstrip{
+    background-color: black;
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+#securityCodecss{
+    grid-row:4/5;
+    grid-column: 2/3;
+    margin-left: 7px;
+}
+#securityCode{
+    width: 40px;
+}
+form{
+    font-size: .85em;
+    padding: 20px;
+}
+#numberlab{
+    grid-row: 1/2;
+}
+#cardnumber{
+    grid-row: 2/3;
+    width: 275px;
+}
