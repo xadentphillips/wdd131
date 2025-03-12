@@ -298,7 +298,7 @@ foodname.textContent = randomrecipe.name;
 let descript = document.getElementById("description");
 descript.textContent = randomrecipe.description;
 for (let i=1; i <= 5; i++){
-    if (randomrecipe.rating > i){
+    if (randomrecipe.rating >= i){
         let starId = document.getElementById("star" + i);
         starId.textContent = "⭐";
     }
