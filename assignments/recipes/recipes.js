@@ -281,7 +281,6 @@ const recipes = [
 ]
 const randomindex = Math.floor(Math.random() * recipes.length);
 const randomrecipe = recipes[randomindex];
-// const randomrecipe = recipes[1];
 
 const picsId = document.getElementById('foodpic');
 picsId.src = randomrecipe.image;
