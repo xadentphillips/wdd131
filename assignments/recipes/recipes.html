@@ -13,7 +13,7 @@
     <meta name="description" content="Look at these yummy recipes">
     <title>Delicious Recipes</title>
     <link rel="stylesheet" href="recipes.css">
-    <script type="module" src="recipes.js" defer></script>
+    <script src="recipes.js" defer></script>
 </head>
 
 <body>
@@ -33,22 +33,21 @@
     </header>
     <main>
         <div id="recipecard">
-            <img id="crisppic" src="images/apple-crisp.jpg" alt="Apple Crisp Picture">
+            <img id="foodpic" src="" alt="">
             <div id="recipeparts">
                 <div id="tags">
-                    <button>dessert</button>
+
                 </div>
-                <h3>Apple Crisp</h3>
+                <h3 id="recipename"></h3>
                 <!-- <p>⭐⭐⭐⭐⭐</p> -->
                 <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
+                    <span aria-hidden="true" id="star1"></span>
+                    <span aria-hidden="true" id="star2"></span>
+                    <span aria-hidden="true" id="star3"></span>
+                    <span aria-hidden="true" id="star4"></span>
+                    <span aria-hidden="true" id="star5"></span>
                 </span>
-                <p id="description">This apple crisp recipe is a simple yet delicious fall dessert that's great servered
-                    warm with vanilla ice cream.</p>
+                <p id="description"></p>
             </div>
         </div>
     </main>
