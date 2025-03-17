@@ -24,22 +24,25 @@
         </div>
         <div id="searchbardiv">
             <form id="searchbarform">
-                <input type="search" id="searchbar" placeholder="Find a recipe">
-                <button type="submit">
+                <input type="text" id="searchbar" placeholder="Find a recipe">
+                <button onclick="searchRecipes(event)">
                     <img id="searchbutton" src="images/search.svg" alt="search button">
                 </button>
             </form>
         </div>
     </header>
     <main>
+        <div id="resultsBar">
+            <p id="searchResults" class="hide">Search Results List:</p>
+            <select id="selector" class="hide">
+            </select>
+        </div>
         <div id="recipecard">
             <img id="foodpic" src="" alt="">
             <div id="recipeparts">
                 <div id="tags">
-
                 </div>
                 <h3 id="recipename"></h3>
-                <!-- <p>⭐⭐⭐⭐⭐</p> -->
                 <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
                     <span aria-hidden="true" id="star1"></span>
                     <span aria-hidden="true" id="star2"></span>

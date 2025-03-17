@@ -279,6 +279,8 @@ const recipes = [
 		rating: 4
 	}
 ]
+const selectForm = document.getElementById("selector");
+const results = document.getElementById("searchResults");
 const randomindex = Math.floor(Math.random() * recipes.length);
 const randomrecipe = recipes[randomindex];
 
@@ -288,29 +290,181 @@ picsId.alt = randomrecipe.name + ' picture for recipe example';
 
 const taglength = randomrecipe.tags.length;
 for (let i = 0; i < taglength; i++) {
-    let newButton = document.createElement('button');
-    newButton.textContent = randomrecipe.tags[i];
-    document.getElementById("tags").appendChild(newButton);
+	let newButton = document.createElement('button');
+	newButton.textContent = randomrecipe.tags[i];
+	document.getElementById("tags").appendChild(newButton);
 }
 let foodname = document.getElementById("recipename");
 console.log(randomrecipe.name)
 foodname.textContent = randomrecipe.name;
 let descript = document.getElementById("description");
 descript.textContent = randomrecipe.description;
-for (let i=1; i <= 5; i++){
-    if (randomrecipe.rating >= i){
-        let starId = document.getElementById("star" + i);
-        starId.textContent = "⭐";
-    }
-    else {
-        if (randomrecipe.rating - i > -1){
-            let starId = document.getElementById("star" + i);
-            starId.textContent = "⯪";
-        }
-        else {
-            let starId = document.getElementById("star" + i);
-            starId.textContent = "☆";
-        }
+for (let i = 1; i <= 5; i++) {
+	if (randomrecipe.rating >= i) {
+		let starId = document.getElementById("star" + i);
+		starId.textContent = "⭐";
+	}
+	else {
+		if (randomrecipe.rating - i > -1) {
+			let starId = document.getElementById("star" + i);
+			starId.textContent = "⯪";
+		}
+		else {
+			let starId = document.getElementById("star" + i);
+			starId.textContent = "☆";
+		}
 
-    }
+	}
 }
+let recipesFromSearch = [];
+function searchRecipes(event) {
+	event.preventDefault();
+	const searchElem = document.getElementById("searchbar");
+	recipesFromSearch = [];
+	let searchValue = searchElem.value;
+	let parameter = searchValue.toLowerCase();
+	for (let i = 0; i < recipes.length; i++) {
+		let currentName = recipes[i].name;
+		let currentTags = recipes[i].tags;
+		let currentDescription = recipes[i].description;
+		let currentIngredients = recipes[i].recipeIngredient;
+		if (currentName.includes(searchValue) || currentTags.includes(searchValue) || currentDescription.includes(searchValue) || currentIngredients.includes(searchValue)) {
+			recipesFromSearch.push(recipes[i]);
+		}
+
+	}
+	console.log(recipesFromSearch);
+	if (recipesFromSearch.length === 1) {
+		let searchBool = results.classList.contains("hide");
+		if (searchBool === false){
+			results.classList.toggle("hide");
+		}
+		let formBool = selectForm.classList.contains("hide");
+		if (formBool === false){
+			selectForm.classList.toggle("hide");
+		}
+		let parent = document.getElementById("tags");
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+		picsId.src = recipesFromSearch[0].image;
+		picsId.alt = recipesFromSearch[0].name + ' picture for recipe example';
+
+		let newtaglength = recipesFromSearch[0].tags.length;
+		for (let i = 0; i < newtaglength; i++) {
+			let newButton = document.createElement('button');
+			newButton.textContent = recipesFromSearch[0].tags[i];
+			document.getElementById("tags").appendChild(newButton);
+		}
+		foodname.textContent = recipesFromSearch[0].name;
+		descript.textContent = recipesFromSearch[0].description;
+		for (let i = 1; i <= 5; i++) {
+			if (recipesFromSearch[0].rating >= i) {
+				let starId = document.getElementById("star" + i);
+				starId.textContent = "⭐";
+			}
+			else {
+				if (recipesFromSearch[0].rating - i > -1) {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "⯪";
+				}
+				else {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "☆";
+				}
+
+			}
+		}
+
+	}
+	else if (recipesFromSearch.length > 1) {
+		let searchBool = results.classList.contains("hide");
+		if (searchBool === true){
+			results.classList.toggle("hide");
+		}
+		let formBool = selectForm.classList.contains("hide");
+		if (formBool === true){
+			selectForm.classList.toggle("hide");
+		}
+		let selectParent = document.getElementById("selector");
+		while (selectParent.firstChild) {
+			selectParent.removeChild(selectParent.firstChild);
+		}
+		for (i=1; i <= recipesFromSearch.length; i++){
+			let newOption = document.createElement("option");
+			newOption.text = i;
+			selectForm.appendChild(newOption);
+		}
+		let parent = document.getElementById("tags");
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+		picsId.src = recipesFromSearch[0].image;
+		picsId.alt = recipesFromSearch[0].name + ' picture for recipe example';
+
+		let newtaglength = recipesFromSearch[0].tags.length;
+		for (let i = 0; i < newtaglength; i++) {
+			let newButton = document.createElement('button');
+			newButton.textContent = recipesFromSearch[0].tags[i];
+			document.getElementById("tags").appendChild(newButton);
+		}
+		foodname.textContent = recipesFromSearch[0].name;
+		descript.textContent = recipesFromSearch[0].description;
+		for (let i = 1; i <= 5; i++) {
+			if (recipesFromSearch[0].rating >= i) {
+				let starId = document.getElementById("star" + i);
+				starId.textContent = "⭐";
+			}
+			else {
+				if (recipesFromSearch[0].rating - i > -1) {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "⯪";
+				}
+				else {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "☆";
+				}
+
+			}
+		}
+	}
+	else {
+		alert("No recipes match your search")
+	}
+}
+selectForm.addEventListener("change", function(event) {
+    const chosen = event.target.value;
+		let parent = document.getElementById("tags");
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+		picsId.src = recipesFromSearch[chosen - 1].image;
+		picsId.alt = recipesFromSearch[chosen - 1].name + ' picture for recipe example';
+
+		let newtaglength = recipesFromSearch[chosen - 1].tags.length;
+		for (let i = 0; i < newtaglength; i++) {
+			let newButton = document.createElement('button');
+			newButton.textContent = recipesFromSearch[chosen - 1].tags[i];
+			document.getElementById("tags").appendChild(newButton);
+		}
+		foodname.textContent = recipesFromSearch[chosen - 1].name;
+		descript.textContent = recipesFromSearch[chosen - 1].description;
+		for (let i = 1; i <= 5; i++) {
+			if (recipesFromSearch[chosen - 1].rating >= i) {
+				let starId = document.getElementById("star" + i);
+				starId.textContent = "⭐";
+			}
+			else {
+				if (recipesFromSearch[chosen - 1].rating - i > -1) {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "⯪";
+				}
+				else {
+					let starId = document.getElementById("star" + i);
+					starId.textContent = "☆";
+				}
+
+			}
+		}
+
+});
