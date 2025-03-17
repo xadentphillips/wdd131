@@ -331,7 +331,7 @@ function searchRecipes(event) {
 		let lowerTags = currentTags.map(item => item.toLowerCase());
 		let lowerIngredients = currentIngredients.map(item => item.toLowerCase());
 
-		if (currentName.includes(searchValue) || lowerTags.includes(searchValue) || currentDescription.includes(searchValue) || lowerIngredients.includes(searchValue)) {
+		if (currentName.includes(parameter) || lowerTags.includes(parameter) || currentDescription.includes(parameter) || lowerIngredients.some(ingredient => ingredient.toLowerCase().includes(parameter))) {
 			recipesFromSearch.push(recipes[i]);
 		}
 
