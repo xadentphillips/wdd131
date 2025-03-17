@@ -83,7 +83,7 @@ header{
 }
 h3{
     font-size: 2em;
-    color: #1B98E0;
+    color: #105e8b;
     padding-left: 12px;
 }
 #tags button{
@@ -133,7 +133,7 @@ footer{
     }
     #bottom{
         padding-left: 40px;
-        color:#1B98E0;
+        color:#115e8b;
     }
     .social img{
         height: 30px;
