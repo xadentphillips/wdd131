@@ -324,11 +324,14 @@ function searchRecipes(event) {
 	let searchValue = searchElem.value;
 	let parameter = searchValue.toLowerCase();
 	for (let i = 0; i < recipes.length; i++) {
-		let currentName = recipes[i].name;
+		let currentName = recipes[i].name.toLowerCase();
 		let currentTags = recipes[i].tags;
-		let currentDescription = recipes[i].description;
+		let currentDescription = recipes[i].description.toLowerCase();
 		let currentIngredients = recipes[i].recipeIngredient;
-		if (currentName.includes(searchValue) || currentTags.includes(searchValue) || currentDescription.includes(searchValue) || currentIngredients.includes(searchValue)) {
+		let lowerTags = currentTags.map(item => item.toLowerCase());
+		let lowerIngredients = currentIngredients.map(item => item.toLowerCase());
+
+		if (currentName.includes(searchValue) || lowerTags.includes(searchValue) || currentDescription.includes(searchValue) || lowerIngredients.includes(searchValue)) {
 			recipesFromSearch.push(recipes[i]);
 		}
 
