@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Press+Start+2P&display=swap');
+body{
+    font-family: Doto, sans-serif;
+    background-color: #adff02;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Press Start 2P";
+}
+header{
+    background-color: #006081;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    text-align: center;
+    margin: 0 auto;
+    height: 75px;
+}
+#logolink{
+    grid-column: 1/2;
+    text-align: center;
+    margin: 0 auto;
+}
+#liblogo{
+    height: 75px;
+}
+nav{
+    grid-column: 2/3;
+    background-color: #006081;
+    color: rgb(255, 255, 255);
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr 1.5fr .5fr .5fr; */
+    justify-items: center;
+    align-content: center;
+    display: flex;
+    height: 75px;
+}
+nav a:hover{
+    background-color: #8f00ff;
+    color: white;
+}
+nav a{
+    color: white;
+    font-size: 1.2em;
+    padding: 25px;
+}
+.nav{
+    text-decoration: none;
+}
+#filter{
+    margin: 20px;
+    max-height: 30px;
+    max-width: 180px;
+}
+main{
+    text-align: center;
+    margin: 0 auto;
+}
+#herodiv{
+    margin-top: 100px;
+    width: 800px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+#herotitle{
+    margin-top: 90px;
+    color: #8f00ff;
+    line-height: 1.5em;
+}
+#herosubtitle{
+    font-size: 1.25em;
+    margin-bottom: 75px;
+}
+img{
+    max-width: 500px;
+}
+.card{
+    width: 450px;
+}
+#gamediv{
+    display: flex;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 75px;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+h3, h4{
+    color:#8f00ff
+}
+.linkpic1{
+    height: 300px;
+}
+.linkpic{
+    height: 150px;
+}
+footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr .4fr;
+    justify-items: center;
+    align-content: baseline;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 50px;
+}
+#lowgo{
+    height: 100px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-left: 40px;
+}
+#bottom_links{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+#bottom_links a{
+    margin: 7px;
+}
+#copyright{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.hide{
+    display: none;
+}
+li{
+   color:#8f00ff;
+}
+
+/* Accordion CSS */
+
+    .accordion { 
+    background-color: #006081;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .accordion:hover {
+    background-color: #006587;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: #adff02;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /*Memory Page CSS*/
+  #memcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 75%;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 125px;
+
+  }
+  .memorycard{
+    height: 250px;
+  }
+#memcontainer img{
+    max-height: 300px;
+    max-width: 200px;
+}
+#memorysubtitle{
+    background-color: #8f00ff;
+    color:aqua;
+}
+#restartbutton{
+    font-size: 1.4em;
+}
+#memorydiv{
+    margin-top: 100px;
+    padding-top: 30px;
+    width: 800px;
+    margin: 0 auto;
+    max-width: 80%;
+
+}
+@media screen and (max-width: 800px) {
+    #lowgo{
+        height: 75px;
+    }
+}

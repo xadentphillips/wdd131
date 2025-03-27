@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Game Library">
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+        content="This is a library with simple games that are not blocked by school websites">
+    <meta property="og:url" content="https://xadentphillips.github.io/wdd131/personalSite/index.html">
+    <meta name="twitter:card" content="Tweet on X">
+    <meta name="author" content="Xaden Phillips">
+    <meta name="description" content="Play these fun simple web games">
+    <script src="home.js" defer></script>
+    <link rel="stylesheet" href="personal.css">
+    <title>Xaden's Glorious Game Library</title>
+</head>
+
+<body>
+    <header>
+        <a id="logolink" href="index.html">
+            <img id="liblogo" src="images/librarylogo.webp" alt="Game Library Logo">
+        </a>
+        <nav>
+            <a class="nav" id="nav1" href="index.html">Home</a>
+            <a class="nav" id="nav2" href="memory.html">Memory Game</a>
+            <a class="nav" id="nav3" href="Siteplan.html">Site Plan</a>
+            <select id="filter" aria-label="Player selector">
+                <option value="all">All Games</option>
+                <option value="one">Single Player Games</option>
+                <option value="two">Two Player Games</option>
+            </select>
+        </nav>
+    </header>
+    <main>
+        <div id="herodiv">
+            <h1 id="herotitle">Xaden's Simple Game Library Collection</h1>
+            <p id="herosubtitle">In this age of crazy games and stimulus overload, it can be nice to get back to the
+                simple root games of our childhood. Taking time to remember a simpler era and more fond memories can
+                help you destress. Enjoy these quaint games and the fond memories that accompany them.</p>
+        </div>
+        <div id="gamediv">
+            <h2></h2>
+            <div class="card" id="memorycard">
+                <h3 id="memorytitle">Memory Matching</h3>
+                <a id="memorylink" href="memory.html">
+                    <img class="linkpic1" src="images/MatchingLogo.webp" alt="memory picture">
+                </a>
+                <div class="expand">
+                    <button class="accordion" id="memoryexpand">Memory Facts</button>
+                    <div class="panel">
+                    <ul class="expandtext" id="memorytext">
+                        <li class="expanditem">Our earliest records of people playing memory matching games was in
+                            ancient China</li>
+                        <li class="expanditem">The game was first known as "Sheng Ji" translated as "seeking the pair"
+                        </li>
+                        <li class="expanditem">Concentration, as this game was nicknamed, became very popular during the
+                            Industrial Revolution</li>
+                        <li class="expanditem">Concentration began to be produced by many game companies in the 1960s
+                            and 1970s with names like "Memory"</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="ticcard">
+                <h3 id="tictitle">Tic Tac Toe</h3>
+                <a id="ticlink">
+                    <img class="linkpic1" src="images/tictactoe.webp" alt="tic tac toe picture">
+                </a>
+                <div class="expand">
+                    <button class="accordion" id="ticexpand">Tic Tac Toe Facts</button>
+                    <div class="panel">
+                    <ul class="expandtext" id="tictext">
+                        <li class="expanditem">Games like Tic Tac Toe have been played since ancient Egypt</li>
+                        <li class="expanditem">In England the game is known as "Noughts and Crosses"</li>
+                        <li class="expanditem">Canadians call the game "Xs and Os"</li>
+                        <li class="expanditem">Tic Tac Toe was first coded onto computers in 1952</li>
+                        <li class="expanditem">In 1975 a computer was constructed made almost entirely out of Tinkertoys
+                            and was able to play Tic Tac Toe</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="cfourcard">
+                <h3 id="cfourtitle">Four in a Row</h3>
+                <a id="cfourlink">
+                    <img class="linkpic" src="images/fourinarow.webp" alt="four in a row picture">
+                </a>
+                <div class="expand">
+                    <button class="accordion" id="cfourexpand">Four in a Row Facts</button>
+                    <div class="panel">
+                    <ul class="expandtext" id="cfourtext">
+                        <li class="expanditem">Allgedly, the first name for the game was "The Captain's Mistress" named
+                            so because a boat captain played it so often with one of his passengers</li>
+                        <li class="expanditem">The game likely originated in the late 1800s or early 1900s</li>
+                        <li class="expanditem">Instead of circles, the game was originally played with little balls</li>
+                        <li class="expanditem">The game may have been inspired by tic tac toe as people tried to make it
+                            3D</li>
+                        <li class="expanditem">Unless they are stacked vertically, all winning four in a rows must go
+                            through the center column</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="brickcard">
+                <h3 id="bricktitle">Brick Breaker</h3>
+                <a id="bricklink">
+                    <img class="linkpic" src="images/brickbreaker.webp" alt="brick breaker picture">
+                </a>
+                <div class="expand">
+                    <button class="accordion" id="brickexpand">Brick Breaker Facts</button>
+                    <div class="panel">
+                    <ul class="expandtext" id="bricktext">
+                        <li class="expanditem">Brick Breaker was developed for BlackBerry</li>
+                        <li class="expanditem">Rather than a mouse or arrowkeys, the paddle was originally controlled by
+                            the BlackBerry trackpad</li>
+                        <li class="expanditem">There are support groups for those with Brick Breaker addictions</li>
+                        <li class="expanditem">Brick Breaker was created by a Canadian programmer</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img id="lowgo" src="images/librarylogo.webp" alt="Library logo">
+        <div id="bottom_links">
+            <a class="lowlink" id="bottom1" href="index.html">Home</a>
+            <a class="lowlink" id="bottom2" href="memory.html">Memory Game</a>
+            <a class="lowlink" id="bottom" href="Siteplan.html">Site Plan</a>
+        </div>
+        <p id="copyright">©2025 Copyright Pending</p>
+    </footer>
+</body>
+
+</html>

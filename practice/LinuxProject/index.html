@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Recovery Services</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background */
+            color: #333;
+        }
+
+        /* Hero banner styles */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            background-color: #007BFF;
+        }
+
+        .hero-banner h1 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+
+        .hero-banner p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* Company description styles */
+        .company-description {
+            text-align: center;
+            max-width: 900px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            background-color: #ffffff; /* White block for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section and grid styles */
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 40px;
+            text-align: center;
+            color: #007BFF; /* Primary blue color */
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            background: #ffffff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .service-button {
+            font-size: 14px;
+            padding: 6px 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .service-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <h1>Cyber Recovery Services</h1>
+        <p>Your trusted partner in navigating the path to recovery after cyberattacks.</p>
+    </div>
+
+    <!-- Company Description -->
+    <section class="company-description">
+        <p>
+            At Cyber Recovery Services, we specialize in helping businesses recover from cyberattacks. Whether you need secure communication systems, file storage solutions, or tailored recovery plans, our team of experts is here to restore your operations swiftly and safely. With cutting-edge technology and deep expertise, we aim to rebuild your trust and strengthen your digital resilience.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <main>
+        <h2>Our Specialized Services</h2>
+        <div class="service-container">
+            <!-- Service 1 -->
+            <div class="service-item">
+                <p class="service-title">Temporary Communication Setup</p>
+                <p class="service-description">Quickly establish secure temporary communication channels to ensure your team stays connected during recovery.</p>
+                <button class="service-button" onclick="buttonClicked('Temp Comm')">Temp Comm</button>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-item">
+                <p class="service-title">Internal Secure Network</p>
+                <p class="service-description">Set up a private, internal network for sending sensitive files securely and efficiently.</p>
+                <button class="service-button" onclick="buttonClicked('Secure Net')">Secure Net</button>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-item">
+                <p class="service-title">Secure File Storage IP</p>
+                <p class="service-description">Provide an IP for secure storage and distribution of essential files necessary for business operations.</p>
+                <button class="service-button" onclick="buttonClicked('File IP')">File IP</button>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-item">
+                <p class="service-title">Tailored Recovery Support</p>
+                <p class="service-description">Work directly with our experts to develop recovery solutions customized for your business needs.</p>
+                <button class="service-button" onclick="buttonClicked('Recovery Help')">Recovery Help</button>
+            </div>
+        </div>
+        <p id="message" style="text-align: center; font-style: italic; margin-top: 20px;"></p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Cyber Recovery Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle button clicks (display simple messages)
+        function buttonClicked(serviceName) {
+            document.getElementById('message').textContent = `Thank you for showing interest in "${serviceName}". Our team will assist you further!`;
+        }
+    </script>
+</body>
+</html>
