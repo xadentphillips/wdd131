@@ -60,11 +60,11 @@ const images = [
 ]
 let doubledImages = images.map(obj => [obj, { ...obj }]).flat();
 function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    return array.map((_, i, arr) => {
         let randomIndex = Math.floor(Math.random() * (i + 1));
-        [array[i], array[randomIndex]] = [array[randomIndex], array[i]]; // Swap elements
-    }
-    return array;
+        [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]]; // Swap elements
+        return arr[i];
+    });
 }
 let shuffled = shuffle(doubledImages);
 let container = document.getElementById('memcontainer');
