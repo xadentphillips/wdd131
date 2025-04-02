@@ -30,51 +30,32 @@ const filterlist = [
 	}
 ]
 
-but.addEventListener('change', function(event){
+function filterShift(event) {
     const chosen = event.target.value;
-    if (chosen == 'all'){
-        if (mem.classList.contains('hide')){
-            mem.classList.toggle('hide')
-        }
-        if (tic.classList.contains('hide')){
-            tic.classList.toggle('hide')
-        }
-        if (cfour.classList.contains('hide')){
-            cfour.classList.toggle('hide')
-        }
-        if (brick.classList.contains('hide')){
-            brick.classList.toggle('hide')
-        }
+
+    if (chosen === 'all') {
+        [mem, tic, cfour, brick].forEach(el => {
+            if (el.classList.contains('hide')) {
+                el.classList.toggle('hide');
+            }
+        });
+    } else {
+        filterlist.forEach(item => {
+            if (item.playernum == (chosen === 'one' ? 1 : 2)) {
+                if (item.elm.classList.contains('hide')) {
+                    item.elm.classList.toggle('hide');
+                }
+            } else {
+                if (!item.elm.classList.contains('hide')) {
+                    item.elm.classList.toggle('hide');
+                }
+            }
+        });
     }
-    else if (chosen == 'one') {
-        for (let i=0; i < filterlist.length; i++) {
-            if (filterlist[i].playernum == 1){
-                if (filterlist[i].elm.classList.contains('hide')){
-                    filterlist[i].elm.classList.toggle('hide');
-                }
-            }
-            else if (filterlist[i].playernum == 2){
-                if (!filterlist[i].elm.classList.contains('hide')){
-                    filterlist[i].elm.classList.toggle('hide');
-                }
-            }
-        }
-    }
-    else if (chosen == 'two') {
-        for (let i=0; i < filterlist.length; i++) {
-            if (filterlist[i].playernum == 2){
-                if (filterlist[i].elm.classList.contains('hide')){
-                    filterlist[i].elm.classList.toggle('hide');
-                }
-            }
-            else if (filterlist[i].playernum == 1){
-                if (!filterlist[i].elm.classList.contains('hide')){
-                    filterlist[i].elm.classList.toggle('hide');
-                }
-            }
-        }
-    }
-})
+}
+
+but.addEventListener('change', filterShift);
+
 
 
 

@@ -85,54 +85,55 @@ for (i = 0; i < 16; i++) {
     newimg.dataset.alter = shuffled[i].alter;
 }
 let numcheck = 0;
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('memorycard')) {
-        if (numcheck < 2) {
-            if (event.target.classList.contains('memorycard')) {
-                event.target.src = event.target.dataset.source;
-                event.target.alt = event.target.dataset.alter;
-                event.target.classList.remove('memorycard');
-                event.target.classList.add(event.target.dataset.clss);
-                event.target.classList.add(event.target.dataset.clss1);
-                let newone = event.target;
-                numcheck++;
-            }
-            if (numcheck == 2) {
-                let checker = document.getElementsByClassName('flipcard')
-                if (checker[1].dataset.id === checker[0].dataset.id) {
-                    while (document.querySelectorAll('.flipcard').length > 0) {
-                        let newchecker = document.getElementsByClassName('flipcard');
-                        for(i=0; i<newchecker.length;i++){
-                            newchecker[i].classList.add('hide');
-                            newchecker[i].classList.remove('flipcard');
-                        }
+function cardFlip(event) {
+    if (!event.target.classList.contains('memorycard')) return;
+
+    if (numcheck < 2) {
+        event.target.src = event.target.dataset.source;
+        event.target.alt = event.target.dataset.alter;
+        event.target.classList.remove('memorycard');
+        event.target.classList.add(event.target.dataset.clss);
+        event.target.classList.add(event.target.dataset.clss1);
+        numcheck++;
+
+        if (numcheck === 2) {
+            let checker = document.getElementsByClassName('flipcard');
+            if (checker[1].dataset.id === checker[0].dataset.id) {
+                while (document.querySelectorAll('.flipcard').length > 0) {
+                    let newchecker = document.getElementsByClassName('flipcard');
+                    for (let i = 0; i < newchecker.length; i++) {
+                        newchecker[i].classList.add('hide');
+                        newchecker[i].classList.remove('flipcard');
                     }
                 }
             }
-            if (document.querySelectorAll('.memorycard').length == 0){
-                alert("You won the game!");
-            }
         }
-        else if (numcheck == 2) {
-            while (document.querySelectorAll('.flipcard').length > 0) {
-                let cardone = document.querySelector('.flipcard');
-                cardone.src = 'images/Memoryback.webp';
-                cardone.classList.add('memorycard');
-                cardone.classList.remove(cardone.dataset.clss);
-                cardone.classList.remove(cardone.dataset.clss1);
-            }
-            if (event.target.classList.contains('memorycard')) {
 
-                event.target.src = event.target.dataset.source;
-                event.target.alt = event.target.dataset.alter;
-                event.target.classList.remove('memorycard');
-                event.target.classList.add(event.target.dataset.clss);
-                event.target.classList.add(event.target.dataset.clss1);
-                numcheck = 1;
-            }
+        if (document.querySelectorAll('.memorycard').length === 0) {
+            alert("You won the game!");
+        }
+    } else if (numcheck === 2) {
+        while (document.querySelectorAll('.flipcard').length > 0) {
+            let cardone = document.querySelector('.flipcard');
+            cardone.src = 'images/Memoryback.webp';
+            cardone.classList.add('memorycard');
+            cardone.classList.remove(cardone.dataset.clss);
+            cardone.classList.remove(cardone.dataset.clss1);
+        }
+
+        if (event.target.classList.contains('memorycard')) {
+            event.target.src = event.target.dataset.source;
+            event.target.alt = event.target.dataset.alter;
+            event.target.classList.remove('memorycard');
+            event.target.classList.add(event.target.dataset.clss);
+            event.target.classList.add(event.target.dataset.clss1);
+            numcheck = 1;
         }
     }
-})
+}
+
+document.addEventListener('click', cardFlip);
+
 
 var acc = document.getElementsByClassName("accordion");
 var i;
